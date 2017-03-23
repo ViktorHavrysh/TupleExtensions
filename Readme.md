@@ -66,7 +66,7 @@ Prints:
 2:two
 ```
 
-You can do something like this with `Zip` and `Unzip`:
+You can do something like this with new and improved `Zip` and `Unzip`:
 
 ```csharp
 var left = new[] { 1, 2, 3 };
