@@ -12,3 +12,5 @@ after_build:
 - nuget pack .\src\TupleExtensions\TupleExtensions.nuspec
 test_script:
 - ps: dotnet test .\test\TupleExtensions.Tests\TupleExtensions.Tests.csproj
+artifacts:
+- path: *.nupkg
