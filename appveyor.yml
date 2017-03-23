@@ -1,0 +1,16 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+configuration:
+- Debug
+- Release
+environment:
+ DOTNET_CLI_TELEMETRY_OPTOUT: 1
+build_script:
+- dotnet restore .\src\TupleExtensions\TupleExtensions.csproj
+- dotnet build .\src\TupleExtensions\TupleExtensions.csproj
+- dotnet restore .\test\TupleExtensions.Tests\TupleExtensions.Tests.csproj
+- dotnet build .\test\TupleExtensions.Tests\TupleExtensions.Tests.csproj
+after_build:
+- nuget pack .\src\TupleExtensions\TupleExtensions.nuspec
+test_script:
+- ps: dotnet test .\test\TupleExtensions.Tests\TupleExtensions.Tests.csproj
