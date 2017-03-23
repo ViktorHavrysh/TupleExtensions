@@ -2,17 +2,17 @@
 <package >
   <metadata>
     <id>TupleExtensions.VictorGavrish</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>TupleExtensions</title>
     <authors>Victor Gavrish</authors>
     <owners>Victor Gavrish</owners>
     <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
-	<projectUrl>https://github.com/VictorGavrish/TupleExtensions</projectUrl>
+    <projectUrl>https://github.com/VictorGavrish/TupleExtensions</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A collection of convenience extensions that leverages C# 7 tuples</description>
-    <releaseNotes>Add project URL to Nuget package</releaseNotes>
+    <releaseNotes>Add more tags</releaseNotes>
     <copyright>Copyright 2017 (c) Victor Gavrish. All rights are reserved.</copyright>
-    <tags>linq tuple tuples</tags>
+    <tags>linq tuple tuples valuetuple</tags>
     <dependencies>
       <dependency id="System.ValueTuple" version="4.3.0" />
     </dependencies>

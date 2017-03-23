@@ -24,25 +24,6 @@ Run this in your package manager console:
 
 ### Examples
 
-`WithIndexes` adds indexes to a collection. This allows you to continue to use `foreach`
-where previously you'd be tempted to use a `for` loop:
-
-```csharp
-var array = new[] { "one", "two", "three" };
-foreach ((var index, var element) in array.WithIndexes())
-{
-    Console.WriteLine($"{index}:{element}");
-}
-```
-
-This prints:
-
-```
-0:one
-1:two
-2:three
-```
-
 An extension on the `KeyValuePair<TKey, TValue>` struct allows ergonomic
 dictionary traversal:
 
@@ -101,4 +82,23 @@ This prints:
 3
 two
 three
+```
+
+`WithIndexes` adds indexes to a collection. This allows you to continue to use `foreach`
+where previously you'd be tempted to use a `for` loop:
+
+```csharp
+var array = new[] { "one", "two", "three" };
+foreach ((var index, var element) in array.WithIndexes())
+{
+    Console.WriteLine($"{index}:{element}");
+}
+```
+
+This prints:
+
+```
+0:one
+1:two
+2:three
 ```
