@@ -5,7 +5,7 @@ TupleExtensions
 
 [![Build status](https://ci.appveyor.com/api/projects/status/l2bwb5ht3sjpaoir?svg=true)](https://ci.appveyor.com/project/VictorGavrish/tupleextensions)
 
-Licnensed under the MIT license.
+Licensed under the MIT license.
 
 ### Requirements
 
@@ -13,6 +13,14 @@ This library requires a framework that supports at least version 1.4 of .NET Sta
 
 Look [here](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) to find out if your
 framework supports it.
+
+### Installation
+
+Run this in your package manager console:
+
+```
+ Install-Package TupleExtensions.VictorGavrish
+```
 
 ### Examples
 
