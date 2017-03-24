@@ -75,5 +75,54 @@ namespace TupleExtensions
 
             return (input.Select(x => x.left), input.Select(x => x.right));
         }
+
+        /// <summary>
+        /// Creates a <a cref="Dictionary{TKey, TValue}" /> from an <a cref="IEnumerable{(TKey key, TValue value)}" />.
+        /// </summary>
+        /// <param name="source">
+        /// An <a cref="IEnumerable{(TKey key, TValue value)}" /> to create a <a cref="Dictionary{TKey, TValue}" /> from.
+        /// </param>
+        /// <returns>
+        /// A <a cref="Dictionary{TKey, TValue}" /> that contains values of type TValue from the input sequence.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">
+        /// source is null.
+        /// -or-
+        /// there is a null key in the sequence.
+        /// </exception>
+        /// <exception cref="ArgumentException">There are duplicate keys in the sequence.</exception>
+        public static Dictionary<TKey, TValue> ToDictionary<TKey, TValue>(this IEnumerable<(TKey key, TValue value)> source)
+        {
+            return ToDictionary(source, null);
+        }
+
+        /// <summary>
+        /// Creates a <a cref="Dictionary{TKey, TValue}" /> from an <a cref="IEnumerable{(TKey key, TValue value)}" />
+        /// according to a specified comparer.
+        /// </summary>
+        /// <param name="source">
+        /// An <a cref="IEnumerable{(TKey key, TValue value)}" /> to create a <a cref="Dictionary{TKey, TValue}" /> from.
+        /// </param>
+        /// <param name="comparer">
+        /// An <a cref="IEqualityComparer{TKey} /> to compare keys.
+        /// </param>
+        /// <returns>
+        /// A <a cref="Dictionary{TKey, TValue}" /> that contains values of type TValue from the input sequence.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">
+        /// source is null.
+        /// -or-
+        /// there is a null key in the sequence.
+        /// </exception>
+        /// <exception cref="ArgumentException">There are duplicate keys in the sequence.</exception>
+        public static Dictionary<TKey, TValue> ToDictionary<TKey, TValue>(this IEnumerable<(TKey key, TValue value)> source, IEqualityComparer<TKey> comparer)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+
+            return source.ToDictionary(tup => tup.key, tup => tup.value, comparer);
+        }
     }
 }

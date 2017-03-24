@@ -131,5 +131,94 @@ namespace TupleExtensions.Tests
             // assert
             Assert.Equal(expected, result);
         }
+
+        [Fact]
+        public void TestToDictionary()
+        {
+            // arrange
+            var sequence = new[]
+            {
+                (1, "one"),
+                (2, "two")
+            };
+            var expected = new Dictionary<int, string>
+            {
+                { 1, "one" },
+                { 2, "two" }
+            };
+
+            // act
+            var actual = sequence.ToDictionary();
+
+            // assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void TestToDictionaryWithEqualityComparer()
+        {
+            // arrange
+            var sequence = new[]
+            {
+                (1.0f, "one"),
+                (2.0f, "two")
+            };
+            var expected = new Dictionary<float, string>
+            {
+                { 1.0f, "one" },
+                { 2.0f, "two" }
+            };
+
+            // act
+            var actual = sequence.ToDictionary(new TruncatingEqualityComparer());
+
+            // assert
+            Assert.Equal(expected, actual);
+            Assert.Equal("one", actual[1.1f]);
+            Assert.Throws<KeyNotFoundException>(() => actual[3.0f]);
+        }
+
+        [Fact]
+        public void TestToDictionaryArgumentNullException()
+        {
+            // arrange
+            var sequence = new[]
+            {
+                (1, "one"),
+                (1, "duplicate")
+            };
+
+            // act
+            var exception = Record.Exception(() => sequence.ToDictionary());
+
+            // assert
+            Assert.IsType<ArgumentException>(exception);
+        }
+
+        [Fact]
+        public void TestToDictionaryArgumentException()
+        {
+            // arrange
+            IEnumerable<(int, string)> empty = null;
+
+            // act
+            var exception = Record.Exception(() => empty.ToDictionary());
+
+            // assert
+            Assert.IsType<ArgumentNullException>(exception);
+        }
+
+        private class TruncatingEqualityComparer : IEqualityComparer<float>
+        {
+            public bool Equals(float x, float y)
+            {
+                return Math.Truncate(x) == Math.Truncate(y);
+            }
+
+            public int GetHashCode(float obj)
+            {
+                return Math.Truncate(obj).GetHashCode();
+            }
+        }
     }
 }

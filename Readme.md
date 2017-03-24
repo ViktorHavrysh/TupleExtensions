@@ -47,6 +47,8 @@ Prints:
 2:two
 ```
 
+##
+
 You can do something like this with new and improved `Zip` and `Unzip`:
 
 ```csharp
@@ -84,6 +86,8 @@ two
 three
 ```
 
+##
+
 `WithIndexes` adds indexes to a collection. This allows you to continue to use `foreach`
 where previously you'd be tempted to use a `for` loop:
 
@@ -101,4 +105,17 @@ This prints:
 0:one
 1:two
 2:three
+```
+
+##
+
+You can create a dictionary from a sequence of tuples:
+
+```csharp
+var sequence = new[]
+{
+    (1, "one"),
+    (2, "two")
+};
+var dictionary = sequence.ToDictionary();
 ```

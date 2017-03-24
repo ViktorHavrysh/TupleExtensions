@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>TupleExtensions.VictorGavrish</id>
-    <version>1.0.2</version>
+    <version>1.1.0</version>
     <title>TupleExtensions</title>
     <authors>Victor Gavrish</authors>
     <owners>Victor Gavrish</owners>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/VictorGavrish/TupleExtensions</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A collection of convenience extensions that leverages C# 7 tuples</description>
-    <releaseNotes>Add more tags</releaseNotes>
+    <releaseNotes>Added ToDictioray extensions</releaseNotes>
     <copyright>Copyright 2017 (c) Victor Gavrish. All rights are reserved.</copyright>
     <tags>linq tuple tuples valuetuple</tags>
     <dependencies>
