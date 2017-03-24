@@ -77,10 +77,10 @@ namespace TupleExtensions
         }
 
         /// <summary>
-        /// Creates a <a cref="Dictionary{TKey, TValue}" /> from an <a cref="IEnumerable{(TKey key, TValue value)}" />.
+        /// Creates a <a cref="Dictionary{TKey, TValue}" /> from an <a cref="IEnumerable{T}" />.
         /// </summary>
         /// <param name="source">
-        /// An <a cref="IEnumerable{(TKey key, TValue value)}" /> to create a <a cref="Dictionary{TKey, TValue}" /> from.
+        /// An <a cref="IEnumerable{T}" /> to create a <a cref="Dictionary{TKey, TValue}" /> from.
         /// </param>
         /// <returns>
         /// A <a cref="Dictionary{TKey, TValue}" /> that contains values of type TValue from the input sequence.
@@ -97,14 +97,14 @@ namespace TupleExtensions
         }
 
         /// <summary>
-        /// Creates a <a cref="Dictionary{TKey, TValue}" /> from an <a cref="IEnumerable{(TKey key, TValue value)}" />
+        /// Creates a <a cref="Dictionary{TKey, TValue}" /> from an <a cref="IEnumerable{T}" />
         /// according to a specified comparer.
         /// </summary>
         /// <param name="source">
-        /// An <a cref="IEnumerable{(TKey key, TValue value)}" /> to create a <a cref="Dictionary{TKey, TValue}" /> from.
+        /// An <a cref="IEnumerable{T}" /> to create a <a cref="Dictionary{TKey, TValue}" /> from.
         /// </param>
         /// <param name="comparer">
-        /// An <a cref="IEqualityComparer{TKey} /> to compare keys.
+        /// An <a cref="IEqualityComparer{T}" /> to compare keys.
         /// </param>
         /// <returns>
         /// A <a cref="Dictionary{TKey, TValue}" /> that contains values of type TValue from the input sequence.
