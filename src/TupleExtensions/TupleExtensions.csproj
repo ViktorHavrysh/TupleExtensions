@@ -6,6 +6,22 @@
     <RootNamespace>TupleExtensions</RootNamespace>
   </PropertyGroup>
 
+  <!-- NuGet Settings -->
+  <PropertyGroup>
+    <PackageId>TupleExtensions.VictorGavrish</PackageId>
+    <PackageVersion>1.1.2</PackageVersion>
+    <Authors>Victor Gavrish</Authors>
+    <Description>A collection of convenience extensions that leverages C# 7 tuples</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>Moved to using msbuild for building Nuget packages</PackageReleaseNotes>
+    <Copyright>Copyright 2017 (c) Victor Gavrish. All rights are reserved.</Copyright>
+    <PackageTags>linq tuple tuples valuetuple</PackageTags>
+    <PackageProjectUrl>https://github.com/VictorGavrish/TupleExtensions</PackageProjectUrl>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Version>1.1.2</Version>
+    <RepositoryUrl>https://github.com/VictorGavrish/TupleExtensions</RepositoryUrl>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>bin\Release\netstandard1.4\TupleExtensions.xml</DocumentationFile>
   </PropertyGroup>
