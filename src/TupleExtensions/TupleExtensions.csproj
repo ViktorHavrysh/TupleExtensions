@@ -4,12 +4,12 @@
     <TargetFramework>netstandard1.0</TargetFramework>
     <AssemblyName>TupleExtensions</AssemblyName>
     <RootNamespace>TupleExtensions</RootNamespace>
+    <Version>1.2.0</Version>
   </PropertyGroup>
 
   <!-- NuGet Settings -->
   <PropertyGroup>
     <PackageId>TupleExtensions.VictorGavrish</PackageId>
-    <PackageVersion>1.2.0</PackageVersion>
     <Authors>Victor Gavrish</Authors>
     <Description>A collection of convenience extensions that leverages C# 7 tuples</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
