@@ -1,15 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.4</TargetFramework>
+    <TargetFramework>netstandard1.0</TargetFramework>
     <AssemblyName>TupleExtensions</AssemblyName>
     <RootNamespace>TupleExtensions</RootNamespace>
+    <Version>1.2.0</Version>
   </PropertyGroup>
 
   <!-- NuGet Settings -->
   <PropertyGroup>
     <PackageId>TupleExtensions.VictorGavrish</PackageId>
-    <PackageVersion>1.1.2</PackageVersion>
     <Authors>Victor Gavrish</Authors>
     <Description>A collection of convenience extensions that leverages C# 7 tuples</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -18,7 +18,6 @@
     <PackageTags>linq tuple tuples valuetuple</PackageTags>
     <PackageProjectUrl>https://github.com/VictorGavrish/TupleExtensions</PackageProjectUrl>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <Version>1.1.2</Version>
     <RepositoryUrl>https://github.com/VictorGavrish/TupleExtensions</RepositoryUrl>
   </PropertyGroup>
 
@@ -28,6 +27,8 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>bin\Debug\netstandard1.4\TupleExtensions.xml</DocumentationFile>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <TreatSpecificWarningsAsErrors />
   </PropertyGroup>
 
   <ItemGroup>

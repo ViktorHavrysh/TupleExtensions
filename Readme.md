@@ -9,7 +9,7 @@ Licensed under the MIT license.
 
 ### Requirements
 
-This library requires a framework that supports at least version 1.4 of .NET Standard.
+This library requires a framework that supports at least version 1.0 of .NET Standard.
 
 Look [here](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) to find out if your
 framework supports it.
