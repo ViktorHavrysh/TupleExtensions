@@ -35,26 +35,26 @@ namespace TupleExtensions
         /// Merges two sequesnces, producing a sequence of tuples. If either of the child sequences stops producing results,
         /// the resulting sequence stops producing results as well.
         /// </summary>
-        /// <param name="first">The frist sequence to merge.</param>
-        /// <param name="second">The second sequence to merge.</param>
+        /// <param name="left">The frist sequence to merge.</param>
+        /// <param name="right">The second sequence to merge.</param>
         /// <returns>
         /// The resulting sequence of tuples. The first element of each tuples comes from the first input sequence,
         /// the second element comes from the second input sequence.
         /// </returns>
         /// <exception cref="ArgumentNullException">first or second is null</exception>
-        public static IEnumerable<(V1, V2)> Zip<V1, V2>(this IEnumerable<V1> first, IEnumerable<V2> second)
+        public static IEnumerable<(V1 left, V2 right)> Zip<V1, V2>(this IEnumerable<V1> left, IEnumerable<V2> right)
         {
-            if (first == null)
+            if (left == null)
             {
-                throw new ArgumentNullException(nameof(first));
+                throw new ArgumentNullException(nameof(left));
             }
 
-            if (second == null)
+            if (right == null)
             {
-                throw new ArgumentNullException(nameof(second));
+                throw new ArgumentNullException(nameof(right));
             }
 
-            return first.Zip(second, (v1, v2) => (v1, v2));
+            return left.Zip(right, (v1, v2) => (v1, v2));
         }
 
         /// <summary>

@@ -4,7 +4,7 @@
     <TargetFramework>netstandard1.0</TargetFramework>
     <AssemblyName>TupleExtensions</AssemblyName>
     <RootNamespace>TupleExtensions</RootNamespace>
-    <Version>1.2.0</Version>
+    <Version>1.2.1</Version>
   </PropertyGroup>
 
   <!-- NuGet Settings -->
@@ -13,7 +13,7 @@
     <Authors>Victor Gavrish</Authors>
     <Description>A collection of convenience extensions that leverages C# 7 tuples</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>Moved to using msbuild for building Nuget packages</PackageReleaseNotes>
+    <PackageReleaseNotes>Improved Zip's signature (in a backwards-compatible way).</PackageReleaseNotes>
     <Copyright>Copyright 2017 (c) Victor Gavrish. All rights are reserved.</Copyright>
     <PackageTags>linq tuple tuples valuetuple</PackageTags>
     <PackageProjectUrl>https://github.com/VictorGavrish/TupleExtensions</PackageProjectUrl>
