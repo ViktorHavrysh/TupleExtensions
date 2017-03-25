@@ -4,7 +4,7 @@
     <TargetFramework>netstandard1.0</TargetFramework>
     <AssemblyName>TupleExtensions</AssemblyName>
     <RootNamespace>TupleExtensions</RootNamespace>
-    <Version>1.2.1</Version>
+    <Version>1.2.2</Version>
   </PropertyGroup>
 
   <!-- NuGet Settings -->
@@ -13,20 +13,22 @@
     <Authors>Victor Gavrish</Authors>
     <Description>A collection of convenience extensions that leverages C# 7 tuples</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>Improved Zip's signature (in a backwards-compatible way).</PackageReleaseNotes>
     <Copyright>Copyright 2017 (c) Victor Gavrish. All rights are reserved.</Copyright>
     <PackageTags>linq tuple tuples valuetuple</PackageTags>
     <PackageProjectUrl>https://github.com/VictorGavrish/TupleExtensions</PackageProjectUrl>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/VictorGavrish/TupleExtensions</RepositoryUrl>
+    <PackageReleaseNotes>Fix XML documentation.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.4\TupleExtensions.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard1.0\TupleExtensions.xml</DocumentationFile>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <TreatSpecificWarningsAsErrors />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard1.4\TupleExtensions.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netstandard1.0\TupleExtensions.xml</DocumentationFile>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
     <TreatSpecificWarningsAsErrors />
   </PropertyGroup>
