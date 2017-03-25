@@ -22,7 +22,7 @@ namespace TupleExtensions.Tests
         }
 
         [Fact]
-        public void TestWithIndexesArgumentException()
+        public void TestWithIndexesArgumentNullException()
         {
             // arrange
             IEnumerable<string> empty = null;
@@ -50,7 +50,7 @@ namespace TupleExtensions.Tests
         }
 
         [Fact]
-        public void TestZipArgumentExceptions()
+        public void TestZipArgumentNullExceptions()
         {
             // arrange
             var nonEmpty = new List<string> { "one", "two" };
@@ -82,7 +82,7 @@ namespace TupleExtensions.Tests
         }
 
         [Fact]
-        public void TestUnzipArgumentException()
+        public void TestUnzipArgumentNullException()
         {
             // arrange
             IEnumerable<(int, string)> empty = null;
@@ -179,7 +179,7 @@ namespace TupleExtensions.Tests
         }
 
         [Fact]
-        public void TestToDictionaryArgumentNullException()
+        public void TestToDictionaryArgumentException()
         {
             // arrange
             var sequence = new[]
@@ -196,7 +196,7 @@ namespace TupleExtensions.Tests
         }
 
         [Fact]
-        public void TestToDictionaryArgumentException()
+        public void TestToDictionaryArgumentNullException()
         {
             // arrange
             IEnumerable<(int, string)> empty = null;
