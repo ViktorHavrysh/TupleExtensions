@@ -9,9 +9,7 @@ namespace TupleExtensions
     /// </summary>
     public static class TupleLinqExtension
     {
-        /// <summary>
-        /// Adds an index to every element of a sequence.
-        /// </summary>
+        /// <summary>Adds an index to every element of a sequence.</summary>
         /// <param name="input">The input sequence.</param>
         /// <returns>A sequents of tuples that consist of the index of a value in the input iterator plus the value itself.</returns>
         /// <exception cref="ArgumentNullException">input is null</exception>
@@ -57,9 +55,7 @@ namespace TupleExtensions
             return left.Zip(right, (v1, v2) => (v1, v2));
         }
 
-        /// <summary>
-        /// Divides a sequence of tuples into a tuple of two sequences.
-        /// </summary>
+        /// <summary>Divides a sequence of tuples into a tuple of two sequences.</summary>
         /// <param name="input">The sequence to divide.</param>
         /// <returns>
         /// The tuple of sequences. The left seqence will consist of the first elements inside the orirignal sequence's tuple values,
@@ -76,15 +72,11 @@ namespace TupleExtensions
             return (input.Select(x => x.left), input.Select(x => x.right));
         }
 
-        /// <summary>
-        /// Creates a <a cref="Dictionary{TKey, TValue}" /> from an <a cref="IEnumerable{T}" />.
-        /// </summary>
-        /// <param name="source">
-        /// An <a cref="IEnumerable{T}" /> to create a <a cref="Dictionary{TKey, TValue}" /> from.
-        /// </param>
-        /// <returns>
-        /// A <a cref="Dictionary{TKey, TValue}" /> that contains values of type TValue from the input sequence.
-        /// </returns>
+        /// <summary>Creates a <see cref="Dictionary{TKey, TValue}" /> from a sequence of tuples.</summary>
+        /// <param name="source">A sequence of tuples to create a <see cref="Dictionary{TKey, TValue}" /> from.</param>
+        /// <typeparam name="TKey">The type of the keys.</typeparam>
+        /// <typeparam name="TValue">The type of the values.</typeparam>
+        /// <returns>A <see cref="Dictionary{TKey, TValue}" /> that contains values of type TValue from the input sequence.</returns>
         /// <exception cref="ArgumentNullException">
         /// source is null.
         /// -or-
@@ -97,18 +89,14 @@ namespace TupleExtensions
         }
 
         /// <summary>
-        /// Creates a <a cref="Dictionary{TKey, TValue}" /> from an <a cref="IEnumerable{T}" />
+        /// Creates a <see cref="Dictionary{TKey, TValue}" /> from a sequence of tuples
         /// according to a specified comparer.
         /// </summary>
-        /// <param name="source">
-        /// An <a cref="IEnumerable{T}" /> to create a <a cref="Dictionary{TKey, TValue}" /> from.
-        /// </param>
-        /// <param name="comparer">
-        /// An <a cref="IEqualityComparer{T}" /> to compare keys.
-        /// </param>
-        /// <returns>
-        /// A <a cref="Dictionary{TKey, TValue}" /> that contains values of type TValue from the input sequence.
-        /// </returns>
+        /// <param name="source">A sequence of tuples to create a <see cref="Dictionary{TKey, TValue}" /> from.</param>
+        /// <param name="comparer">An <see cref="IEqualityComparer{T}" /> to compare keys.</param>
+        /// <typeparam name="TKey">The type of the keys.</typeparam>
+        /// <typeparam name="TValue">The type of the values.</typeparam>
+        /// <returns> A <see cref="Dictionary{TKey, TValue}" /> that contains values of type TValue from the input sequence.</returns>
         /// <exception cref="ArgumentNullException">
         /// source is null.
         /// -or-
