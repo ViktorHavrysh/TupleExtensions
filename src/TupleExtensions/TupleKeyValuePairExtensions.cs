@@ -8,12 +8,14 @@ namespace TupleExtensions
     public static class TupleKeyValuePairExtensions
     {
         /// <summary>
-        /// Allows to deconstruct a KeyValuePair&lt;TKey, TValue&gt; into a (TKey, TValue) tuple. Allows easier traversal
+        /// Allows to deconstruct a <see cref="KeyValuePair{TKey, TValue}" /> into a (TKey, TValue) tuple. Allows easier traversal
         /// of dictionaries within a foreach.
         /// </summary>
         /// <param name="input">The KeyValuePair to deconstruct.</param>
         /// <param name="key">The Key part of the KeyValuePair.</param>
         /// <param name="value">The Value part of the KeyValuePair.</param>
+        /// <typeparam name="TKey">The type of the keys.</typeparam>
+        /// <typeparam name="TValue">The type of the values.</typeparam>
         /// <example>
         /// foreach ((var key, var value) in dictionary)
         /// {
