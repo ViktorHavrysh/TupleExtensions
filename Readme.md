@@ -1,11 +1,9 @@
 TupleExtensions
 ---------------
 
-`TupleExtensions` is a library with a number of convenience extensions that leverages C# 7 tuples.
+`TupleExtensions` is a NuGet package with a number of convenience extensions that leverage C# 7 tuples.
 
-[![Build status](https://ci.appveyor.com/api/projects/status/l2bwb5ht3sjpaoir?svg=true)](https://ci.appveyor.com/project/VictorGavrish/tupleextensions)
-
-Licensed under the MIT license.
+[![Build status](https://ci.appveyor.com/api/projects/status/l2bwb5ht3sjpaoir?svg=true)](https://ci.appveyor.com/project/VictorGavrish/tupleextensions) [![NuGet](https://img.shields.io/nuget/v/TupleExtensions.VictorGavrish.svg)](https://www.nuget.org/packages/TupleExtensions.VictorGavrish/)  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/VictorGavrish/TupleExtensions/blob/master/LICENSE)
 
 ### Requirements
 

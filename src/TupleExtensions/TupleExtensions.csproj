@@ -16,8 +16,9 @@
     <Copyright>Copyright 2017 (c) Victor Gavrish. All rights are reserved.</Copyright>
     <PackageTags>linq tuple tuples valuetuple</PackageTags>
     <PackageProjectUrl>https://github.com/VictorGavrish/TupleExtensions</PackageProjectUrl>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/VictorGavrish/TupleExtensions</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/VictorGavrish/TupleExtensions/blob/master/LICENSE</PackageLicenseUrl>
     <PackageReleaseNotes>Fix XML documentation.</PackageReleaseNotes>
   </PropertyGroup>
 
