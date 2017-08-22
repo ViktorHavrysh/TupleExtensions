@@ -1,14 +1,11 @@
-version: 1.2.3.{build}
+version: '1.2.4.{build}'
 image: Visual Studio 2017
 configuration: Release
 environment:
- DOTNET_CLI_TELEMETRY_OPTOUT: 1
+  DOTNET_CLI_TELEMETRY_OPTOUT: 1
 build_script:
-- dotnet restore .\src\TupleExtensions\TupleExtensions.csproj
-- dotnet build .\src\TupleExtensions\TupleExtensions.csproj
-- dotnet restore .\test\TupleExtensions.Tests\TupleExtensions.Tests.csproj
-- dotnet build .\test\TupleExtensions.Tests\TupleExtensions.Tests.csproj
+  - dotnet build .\src\TupleExtensions\TupleExtensions.csproj
 test_script:
-- dotnet test .\test\TupleExtensions.Tests\TupleExtensions.Tests.csproj
+  - dotnet test .\test\TupleExtensions.Tests\TupleExtensions.Tests.csproj
 artifacts:
-- path: '**\*.nupkg'
+  - path: '**\*.nupkg'
