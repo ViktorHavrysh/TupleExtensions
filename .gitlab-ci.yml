@@ -24,7 +24,7 @@ build release:
     - master
 
 build prerelease:
-  image: microsoft/dotnet:2.0
+  image: microsoft/dotnet:2.0-sdk
   stage: build
   tags:
     - docker
@@ -38,7 +38,7 @@ build prerelease:
     - master
 
 test:
-  image: microsoft/dotnet:2.0
+  image: microsoft/dotnet:2.0-sdk
   stage: test
   tags:
     - docker
