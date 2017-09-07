@@ -1,0 +1,57 @@
+stages:
+  - build
+  - test
+  - push
+
+variables:
+  PROJECT_NAME: "TupleExtensions"
+  BUILD_CONFIGURATION: "Release"
+  DOCKER_DRIVER: overlay
+  NUGET_SOURCE: "https://www.nuget.org/api/v2/package"
+
+build release:
+  image: microsoft/dotnet:2.0
+  stage: build
+  tags:
+    - docker
+  script:
+    - dotnet build -c $BUILD_CONFIGURATION ./src/TupleExtensions/TupleExtensions.csproj
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - 'src/$PROJECT_NAME/bin/$BUILD_CONFIGURATION/*.nupkg'
+  only:
+    - master
+
+build prerelease:
+  image: microsoft/dotnet:2.0
+  stage: build
+  tags:
+    - docker
+  script:
+    - dotnet build -c $BUILD_CONFIGURATION ./src/TupleExtensions/TupleExtensions.csproj --version-suffix alpha
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - 'src/$PROJECT_NAME/bin/$BUILD_CONFIGURATION/*.nupkg'
+  except:
+    - master
+
+test:
+  image: microsoft/dotnet:2.0
+  stage: test
+  tags:
+    - docker
+  script:
+    - dotnet test ./test/TupleExtensions.Tests/TupleExtensions.Tests.csproj
+
+push to nuget:
+  stage: push
+  tags:
+    - docker
+  script:
+    - cd NuGet
+    - nuget setapikey $NUGET_API_KEY -Source $NUGET_SOURCE -Verbosity quiet
+    - nuget push *.nupkg -Source $NEXUS_SOURCE
+  only:
+    - master
