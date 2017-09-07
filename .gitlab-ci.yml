@@ -10,7 +10,7 @@ variables:
   NUGET_SOURCE: "https://www.nuget.org/api/v2/package"
 
 build release:
-  image: microsoft/dotnet:2.0
+  image: microsoft/dotnet:2.0-sdk
   stage: build
   tags:
     - docker
@@ -20,12 +20,12 @@ build release:
   artifacts:
     expire_in: 1 day
     paths:
-      - 'src/$PROJECT_NAME/bin/$BUILD_CONFIGURATION/*.nupkg'
+      - 'src/TupleExtensions/bin/$BUILD_CONFIGURATION/*.nupkg'
   only:
     - master
 
 build prerelease:
-  image: microsoft/dotnet:1.1-sdk
+  image: microsoft/dotnet:2.0-sdk
   stage: build
   tags:
     - docker
