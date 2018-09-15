@@ -4,7 +4,7 @@
     <TargetFramework>netstandard1.0</TargetFramework>
     <AssemblyName>TupleExtensions</AssemblyName>
     <RootNamespace>TupleExtensions</RootNamespace>
-    <Version>1.2.4</Version>
+    <Version>1.2.5</Version>
     <PackageId>TupleExtensions.VictorGavrish</PackageId>
     <Authors>Victor Gavrish</Authors>
     <Description>A collection of convenience extensions that leverages C# 7 tuples</Description>
@@ -15,7 +15,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/VictorGavrish/TupleExtensions</RepositoryUrl>
     <PackageLicenseUrl>https://github.com/VictorGavrish/TupleExtensions/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageReleaseNotes>Rebuild with Visual Studio 15.3 that fixes a bug with XML documentation and tuples.</PackageReleaseNotes>
+    <PackageReleaseNotes>Added WhenAll for tuples of Tasks.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
