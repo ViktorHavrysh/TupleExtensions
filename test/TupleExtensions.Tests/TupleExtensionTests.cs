@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace TupleExtensions.Tests
@@ -206,6 +208,50 @@ namespace TupleExtensions.Tests
 
             // assert
             Assert.IsType<ArgumentNullException>(exception);
+        }
+
+        [Fact]
+        public async Task TestWaitAll()
+        {
+            // arrange
+            var task1 = Task.FromResult(1);
+            var task2 = Task.FromResult(true);
+
+            // act
+            var (val1, val2) = await (task1, task2).WhenAll();
+
+            // assert
+            Assert.Equal(task1.Result, val1);
+            Assert.Equal(task2.Result, val2);
+        }
+
+        [Fact]
+        public async Task TestWaitAllArgumentNullException()
+        {
+            // arrange
+            var task1 = Task.FromResult(1);
+            var task2 = Task.FromException<bool>(new ArgumentNullException());
+
+            // act
+            var exception = await Record.ExceptionAsync(async () => await (task1, task2).WhenAll());
+
+            // assert
+            Assert.IsType<AggregateException>(exception);
+            Assert.IsType<ArgumentNullException>(((AggregateException)exception).InnerException);
+        }
+
+        [Fact]
+        public async Task TestWaitAllCancelled()
+        {
+            // arrange
+            var task1 = Task.FromResult(1);
+            var task2 = Task.FromCanceled<bool>(new CancellationToken(true));
+
+            // act
+            var exception = await Record.ExceptionAsync(async () => await (task1, task2).WhenAll());
+
+            // assert
+            Assert.IsType<TaskCanceledException>(exception);
         }
 
         private class TruncatingEqualityComparer : IEqualityComparer<float>
