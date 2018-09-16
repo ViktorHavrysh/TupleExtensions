@@ -47,6 +47,17 @@ Prints:
 
 ##
 
+You can await multiple tasks ergonomically:
+
+```csharp
+var task1 = Task.FromResult(1);
+var task2 = Task.FromResult(true);
+
+var (val1, val2) = await (task1, task2).WhenAll();
+```
+
+##
+
 You can do something like this with new and improved `Zip` and `Unzip`:
 
 ```csharp
