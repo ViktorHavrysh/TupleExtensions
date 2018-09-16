@@ -92,9 +92,9 @@ namespace TupleExtensions
 
             var aggregatedTask = Task.WhenAll(tasks);
 
-            aggregatedTask.ContinueWith(t => tcs.SetResult(resultSelector(t)), TaskContinuationOptions.OnlyOnRanToCompletion);
-            aggregatedTask.ContinueWith(_ => tcs.SetCanceled(), TaskContinuationOptions.OnlyOnCanceled);
-            aggregatedTask.ContinueWith(t => tcs.SetException(t.Exception), TaskContinuationOptions.OnlyOnFaulted);
+            aggregatedTask.ContinueWith(t => tcs.SetResult(resultSelector(t)), TaskContinuationOptions.OnlyOnRanToCompletion | TaskContinuationOptions.ExecuteSynchronously);
+            aggregatedTask.ContinueWith(_ => tcs.SetCanceled(), TaskContinuationOptions.OnlyOnCanceled | TaskContinuationOptions.ExecuteSynchronously);
+            aggregatedTask.ContinueWith(t => tcs.SetException(t.Exception), TaskContinuationOptions.OnlyOnFaulted | TaskContinuationOptions.ExecuteSynchronously);
 
             return tcs.Task;
         }
